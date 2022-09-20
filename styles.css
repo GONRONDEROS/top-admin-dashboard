@@ -8,18 +8,17 @@
     --transition-speed: 1s;
     --drawer-color: #0e85e9;
     --drawer-width: clamp(210px, 22vw, 325px);
-    --nav-bg-1: #f8f8f8;
+    --navbar-bg-1: #f8f8f8;
     --navbar-color-1: #c9c9c9;
-    --navbar-color-2: #62d8ff6e;
+    --navbar-color-2: #62daff6e;
     --blue-1: #084c61;
-    --gh-avatar: url('https://github.com/GONRONDEROS.png');
     --gh-avatar2: url('https://github.com/james.png');
     --gh-avatar3: url('https://github.com/susan.png');
     --gh-avatar4: url('https://github.com/fran.png');
     --gh-avatar5: url('https://github.com/bob.png');
     --content-gray: rgn(235, 235, 235);
-    --transition-notDrawer: margin-left 0.3s ease-in;
-    --transition-Drawer: width 0.3s ease-in;
+    --transition-notDrawer: margin-left 0.4s ease-in;
+    --transition-Drawer: width 0.4s ease-in;
 }
 
 body {
@@ -37,7 +36,7 @@ body {
 .drawer {
     grid-area: drawer;
     background-color: var(--drawer-color);
-    width: 4rem;
+    width: 5rem;
     position: fixed;
     transition: var(--transition-Drawer);
     overflow: hidden;
@@ -54,7 +53,7 @@ body {
 
 .drawer:hover ~ .navbar,
 .drawer:hover ~ .content {
-  margin-left: calc(var(--drawer-width) - 4.5rem);
+  margin-left: calc(var(--drawer-width) - 5rem);
 }
 
 .menuItem{
@@ -125,8 +124,104 @@ body {
 .navbar {
     grid-area: navbar;
     transition: var(--transition-notDrawer);
-    
+    background-color: var(--navbar-bg-1);
+    padding: 1.5rem 3rem;
+    border-bottom: 2px solid rgb(219, 219, 219);
 }
+
+.topNav {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    margin-bottom: 2.5rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    width: 100%;
+}
+
+.search > input {
+    display: inline-block;
+    border: 0;
+    background-color: var(--navbar-color-1);
+    padding: 0.5rem 1.5rem;
+    outline-color: var(--blue-1);
+    margin-left: 1.5rem;
+    border-radius: 10px;
+    width: min(80%, 600px);
+    margin-right: 20px;
+}
+
+.navbar .account {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.gh-avatar {
+    margin: 0 1rem 0 2.5rem;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px; 
+}
+
+img {
+    cursor: pointer;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 20px;
+}
+
+.gh-avatar-big {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px; 
+}
+
+.greeting {
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+.profile .name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-top: 0px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btn {
+    background-color: var(--drawer-color);
+    color: var(--text-secondary);
+    font-weight: 800;
+    padding: 0.5rem 1.8rem;
+    border-radius: 8px;
+    font-size: 20px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+
 
 .content {
     grid-area: content;
