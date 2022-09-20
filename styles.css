@@ -7,8 +7,8 @@
     --bg-secondary: #141418;
     --transition-speed: 1s;
     --drawer-color: #0e85e9;
-    --drawer-width: clamp(250px, 22vw, 350px);
-    --navbar-bg-1: #f8f8f8;
+    --drawer-width: clamp(210px, 22vw, 325px);
+    --nav-bg-1: #f8f8f8;
     --navbar-color-1: #c9c9c9;
     --navbar-color-2: #62d8ff6e;
     --blue-1: #084c61;
@@ -18,12 +18,12 @@
     --gh-avatar4: url('https://github.com/fran.png');
     --gh-avatar5: url('https://github.com/bob.png');
     --content-gray: rgn(235, 235, 235);
-    --transition-notDrawer: margin-left 0.4s ease-in;
-    --transition-Drawer: width 0.4s ease-in;
+    --transition-notDrawer: margin-left 0.3s ease-in;
+    --transition-Drawer: width 0.3s ease-in;
 }
 
 body {
-    width: 100 vw;
+    width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-areas: 
@@ -50,6 +50,11 @@ body {
 
 .drawer:hover > .menuItem > h3 {
     display: inline;
+}
+
+.drawer:hover ~ .navbar,
+.drawer:hover ~ .content {
+  margin-left: calc(var(--drawer-width) - 4.5rem);
 }
 
 .menuItem{
@@ -83,6 +88,10 @@ body {
     height: calc(20px + 0.5vw);
 }
 
+.drawer > div:nth-child(8) {
+    padding-top: 50px;
+}
+
 .dashboard {
     font-size: clamp(25px, calc(10px + 0.2vw), 35px);
     color: var(--text-secondary);
@@ -94,8 +103,13 @@ body {
 }
 
 .dashboard h3 {
-    padding-left: 11%;
+    display: none;
+    padding-left: 5%;
     padding-top: 10px;
+}
+
+.drawer:hover > .dashboard > h3 {
+    display: inline;
 }
 
 .dashboard img {
@@ -110,8 +124,12 @@ body {
 
 .navbar {
     grid-area: navbar;
+    transition: var(--transition-notDrawer);
+    
 }
 
 .content {
     grid-area: content;
+    transition: var(--transition-notDrawer);
+
 }
