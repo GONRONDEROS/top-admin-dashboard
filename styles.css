@@ -7,7 +7,7 @@
     --bg-secondary: #141418;
     --transition-speed: 1s;
     --drawer-color: #0e85e9;
-    --drawer-width: clamp(210px, 22vw, 325px);
+    --drawer-width: clamp(250px, 22vw, 350px);
     --navbar-bg-1: #f8f8f8;
     --navbar-color-1: #c9c9c9;
     --navbar-color-2: #62d8ff6e;
@@ -31,6 +31,7 @@ body {
     "drawer content content content";
     grid-template-rows: 0.8fr 4fr;
     grid-template-columns: 5rem 1fr 1fr 1fr;
+    margin: 0px;
 }
 
 .drawer {
@@ -57,6 +58,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    height: 48px;
 }
 
 .menuItem > h3 {
@@ -83,6 +85,17 @@ body {
 
 .dashboard {
     font-size: clamp(25px, calc(10px + 0.2vw), 35px);
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.dashboard h3 {
+    padding-left: 11%;
+    padding-top: 10px;
 }
 
 .dashboard img {
@@ -91,7 +104,7 @@ body {
     justify-content: flex-start;
     width: calc(40px + 0.7vw);
     height: calc(40px + 0.7vw);
-    padding-left: 16px;
+    padding-left: 10%;
     padding-top: 10px;
 }
 
